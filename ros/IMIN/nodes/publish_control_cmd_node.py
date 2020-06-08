@@ -6,7 +6,7 @@ roslaunch bair_car bair_car.launch use_zed:=true record:=false
 """
 import sys
 import traceback
-import runtime_parameters_imin as rp
+import runtime_parameters as rp
 from pure_pursuit import pid_control, pure_pursuit_control
 try:    
     ########################################################
@@ -16,7 +16,8 @@ try:
     import geometry_msgs.msg
     import rospy
 
-   
+    rospy.init_node('run_AUTO',anonymous=True)
+
     state = 0
     previous_state = 0
     state_transition_time_s = 0

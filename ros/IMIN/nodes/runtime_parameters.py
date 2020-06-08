@@ -33,7 +33,7 @@ Location =  'generic' #Smyth_tape'
 #weights_file_path = opjh("model_car/model_car/model/z2_color_tf.npy")
 # weights_file_path = opjh('model_car/keras_model/nets/z2_color_version_1b_final.hdf5') #
 # use_AI = True
-use_PP = True
+use_AUTO = True
 verbose = False
 #use_caffe = True
 n_avg_IMU = 10
@@ -81,29 +81,6 @@ motor_freeze_threshold = 60
 
 ####################### specific car settings ################
 #
-if computer_name == 'Mr_Orange':
-    #motor_gain = 1.0
-    pass
-if computer_name == 'Mr_Silver':
-    #motor_gain = 1.0
-    pass
-if computer_name == 'Mr_Blue':
-    motor_gain = 1.0
-    motor_freeze_threshold = 65
-    pass
-if computer_name == 'Mr_Yellow':
-    #motor_gain = 0.9
-    pass
-if computer_name == 'Mr_Black':
-    #motor_gain = 1.0
-    pass
-if computer_name == 'Mr_White':
-    #motor_gain = 1.0
-    pass
-
-if computer_name == 'Mr_Teal':
-    #motor_gain = 1.0
-    pass
 if computer_name == 'Mr_Audi':
     steer_gain = 1.0
     motor_gain = 1.0
@@ -112,15 +89,6 @@ if computer_name == 'Mr_Audi':
     acc_freeze_threshold_x = 20
     acc_freeze_threshold_y = 20
     acc_freeze_threshold_z = 20
-    pass
-if computer_name == 'Mr_Purple':
-    #motor_gain = 1.0
-    pass
-if computer_name == 'Mr_LightBlue':
-    #motor_gain = 1.0
-    pass
-if computer_name == 'Mr_Blue_Original':
-    motor_gain = 0.5
     pass
 #
 ###################################################################
@@ -144,8 +112,8 @@ if non_user_section:
 	if Follow == 1:
 		foldername = 'follow_'
 	model_name = weights_file_path.split('/')[-1]
-	if AI == 1:
-		foldername = foldername + 'AI_' + model_name +'_'
+	if AUTO == 1:
+		foldername = foldername + 'AUTO_' + model_name +'_'
 	foldername = foldername + task + '_'
 	foldername = foldername + Location + '_'
 	foldername = foldername + time_str() + '_'
