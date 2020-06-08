@@ -156,7 +156,7 @@ try:
             if (previous_state not in [3,5,6,7]):
                 previous_state = state
                 AUTO_enter_timer.reset()
-            if rp.use_PP:
+            if rp.use_AUTO:
                 if not AUTO_enter_timer.check():
                     print "waiting before entering AUTO mode..."
                     steer_cmd_pub.publish(std_msgs.msg.Int32(49))
@@ -181,7 +181,7 @@ try:
                         freeze = True
 
                     # avoid experiment too long
-                    if finish_test_timer:
+                    if finish_test_timer.check():
                         freeze = True
 
                     if freeze:
